@@ -1,0 +1,26 @@
+<mat-label>{{ label }}</mat-label>
+
+<mat-form-field [appearance]="appearance" [floatLabel]="floatLabel">
+  <input
+    matInput
+    [placeholder]="placeholder"
+    [id]="id"
+    [name]="name"
+    [formControlName]="controlName"
+    [type]="type"
+    [required]="required"
+    [autocomplete]="autocomplete"
+    [disabled]="disabled"
+  />
+  @if(iconBefore){
+  <mat-icon matPrefix>{{ iconBefore }}</mat-icon>
+
+  } @if(iconAfter){
+  <mat-icon matSuffix>{{ iconAfter }}</mat-icon>
+
+  }
+  <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+  <mat-error
+    >{{ errorMessage }} <strong>{{ errorMessage }}</strong>
+  </mat-error>
+</mat-form-field>

@@ -1,0 +1,27 @@
+<form [formGroup]="myForm">
+  <app-input
+    [label]="'Username'"
+    [placeholder]="'Enter your username'"
+    [form]="myForm"
+    controlName="username" 
+    [errorMessage]="'Username is required'"
+    [appearance]="'outline'"
+    [iconBefore]="'mail'"
+    [required]="true"
+  ></app-input>
+
+  <app-input
+    [label]="'Password'"
+    [placeholder]="'Enter your password'"
+    [form]="myForm"
+    controlName="password" 
+    [errorMessage]="'Password is required'"
+    [appearance]="'outline'"
+    [iconBefore]="passwordVisible ? 'visibility' : 'visibility_off'"
+    [iconAfter]="passwordVisible ? '' : 'visibility_off'"
+    [required]="true"
+    [type]="passwordVisible ? 'text' : 'password'"
+  ></app-input>
+
+  <button type="submit" [disabled]="myForm.invalid">Login</button>
+</form>
