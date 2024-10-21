@@ -1,16 +1,16 @@
-<mat-label>{{ label }}</mat-label>
+<form [formGroup]="form" ngSkipHydration>
+  <mat-label>{{ label }}</mat-label>
 
-<mat-form-field [appearance]="appearance" [floatLabel]="floatLabel">
+<mat-form-field [appearance]="appearance" >
   <input
     matInput
     [placeholder]="placeholder"
     [id]="id"
     [name]="name"
-    [formControlName]="controlName"
+    [formControlName]="formControlName"
     [type]="type"
     [required]="required"
     [autocomplete]="autocomplete"
-    [disabled]="disabled"
   />
   @if(iconBefore){
   <mat-icon matPrefix>{{ iconBefore }}</mat-icon>
@@ -24,3 +24,5 @@
     >{{ errorMessage }} <strong>{{ errorMessage }}</strong>
   </mat-error>
 </mat-form-field>
+
+</form>

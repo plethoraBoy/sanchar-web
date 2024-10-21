@@ -1,26 +1,24 @@
-<form [formGroup]="myForm">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <app-input
-    [label]="'Username'"
-    [placeholder]="'Enter your username'"
+    label="Username"
+    placeholder="Enter your username"
     [form]="myForm"
-    controlName="username" 
-    [errorMessage]="'Username is required'"
-    [appearance]="'outline'"
-    [iconBefore]="'mail'"
-    [required]="true"
+    formControlName="username"
+    errorMessage="Username is required"
+    appearance="outline"
+    iconBefore="person"
   ></app-input>
 
   <app-input
-    [label]="'Password'"
-    [placeholder]="'Enter your password'"
+    label="Password"
+    placeholder="Enter your password"
     [form]="myForm"
-    controlName="password" 
-    [errorMessage]="'Password is required'"
-    [appearance]="'outline'"
-    [iconBefore]="passwordVisible ? 'visibility' : 'visibility_off'"
-    [iconAfter]="passwordVisible ? '' : 'visibility_off'"
-    [required]="true"
+    [formControlName]="'password'"
+    errorMessage="Password is required"
+    appearance="outline"
+    iconBefore="lock"
     [type]="passwordVisible ? 'text' : 'password'"
+    [iconAfter]="passwordVisible ? 'visibility_off' : 'visibility'"
   ></app-input>
 
   <button type="submit" [disabled]="myForm.invalid">Login</button>

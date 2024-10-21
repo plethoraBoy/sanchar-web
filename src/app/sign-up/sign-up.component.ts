@@ -5,6 +5,7 @@ import {
   FormBuilder,
   ReactiveFormsModule,
   Validators,
+  FormControl,
 } from '@angular/forms';
 
 @Component({
@@ -23,8 +24,8 @@ throw new Error('Method not implemented.');
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
     });
   }
   ngOnInit(): void {
