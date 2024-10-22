@@ -60,53 +60,46 @@
 
             <div class="or-border m-t-30">Login to your account</div>
 
-            <form class="m-t-30" [formGroup]="myForm">
+            <form class="m-t-30" >
               <!-- Username Input -->
+              <mat-label class="f-w-400 m-b-8 d-block">Search Number</mat-label>
 
-              <app-input
-                label="Username"
-                placeholder="Enter your username"
-                [form]="myForm"
-                formControlName="username"
-                errorMessage="Username is required"
-                appearance="outline"
-                iconBefore="person"
-              ></app-input>
-              <app-input
-                label="Password"
-                placeholder="Enter your password"
-                [form]="myForm"
-                [formControlName]="'password'"
-                errorMessage="Password is required"
-                appearance="outline"
-                iconBefore="lock"
-                [type]="passwordVisible ? 'text' : 'password'"
-                [iconAfter]="passwordVisible ? 'visibility_off' : 'visibility'"
-              ></app-input>
-              <div class="d-flex align-items-center m-b-12">
-                <!-- <mat-checkbox color="primary">Remember this Device</mat-checkbox> -->
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select
+                  [(value)]="selectedValue"
+                  (selectionChange)="onSelectionChange($event.value)"
+                >
+                  <mat-option
+                    *ngFor="let option of options"
+                    [value]="option.value"
+                  >
+                    {{ option.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!-- <div class="d-flex align-items-center m-b-12">
+                <mat-checkbox color="primary">Remember this Device</mat-checkbox>
                 <a
                   class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14"
                   >Forgot Password?</a
                 >
-              </div>
-
-              <button
-                mat-flat-button
-                color="primary"
-                class="w-100"
-                (click)="onSubmit()"
-              >
-                Sign In
-              </button>
+              </div> -->
+              <mat-card-actions class="d-flex justify-content-between">
+                <button mat-stroked-button color="warn" class="w-100 m-24">
+                  Back
+                </button>
+                <button mat-flat-button color="primary" class="w-100 m-24">
+                  Otp
+                </button>
+              </mat-card-actions>
             </form>
 
-            <span class="d-block f-w-500 text-center m-t-24"
+            <!-- <span class="d-block f-w-500 text-center m-t-24"
               >New to?
               <a class="text-decoration-none text-primary f-w-500 f-s-14">
                 Create an account</a
               >
-            </span>
+            </span> -->
           </mat-card-content>
         </mat-card>
       </div>

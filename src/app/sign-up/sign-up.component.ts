@@ -7,6 +7,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,13 +17,13 @@ import {
   styleUrls: ['./sign-up.component.scss'], // Corrected to styleUrls
 })
 export class SignUpComponent implements OnInit {
-onSubmit() {
-throw new Error('Method not implemented.');
-}
-  myForm: FormGroup;
+  onSubmit() {
+    this.router.navigate(['/otp-number']);
+  }
+  myForm!: FormGroup;
   passwordVisible = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.myForm = this.fb.group({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
