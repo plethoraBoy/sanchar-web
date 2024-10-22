@@ -20,12 +20,12 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     this.router.navigate(['/otp-number']);
   }
-  myForm!: FormGroup;
+  loginForm!: FormGroup;
   passwordVisible = false;
 
   constructor(private fb: FormBuilder, private router: Router) {
-    this.myForm = this.fb.group({
-      username: new FormControl('', Validators.required),
+    this.loginForm = this.fb.group({
+      username: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
     });
   }

@@ -19,4 +19,16 @@ export class OtpNumberComponent {
   onSelectionChange(value: string) {
     this.selectionChange.emit(value);
   }
+  myOptions = [
+    { value: 1, viewValue: '+91 123-4567' },
+    { value: 2, viewValue: '+91  234-5678' },
+    { value: 3, viewValue: '+91  345-6789' },
+  ];
+
+  selectedOption: string | undefined;
+
+  onOptionChange(value: string) {
+    console.log('Selected value:', value);
+    // Handle the change here
+  }
 }
