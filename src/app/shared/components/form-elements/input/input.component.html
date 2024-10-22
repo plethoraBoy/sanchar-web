@@ -1,28 +1,29 @@
 <form [formGroup]="form" ngSkipHydration>
-  <mat-label>{{ label }}</mat-label>
+  <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">{{
+    label
+  }}</mat-label>
 
-<mat-form-field [appearance]="appearance" >
-  <input
-    matInput
-    [placeholder]="placeholder"
-    [id]="id"
-    [name]="name"
-    [formControlName]="formControlName"
-    [type]="type"
-    [required]="required"
-    [autocomplete]="autocomplete"
-  />
-  @if(iconBefore){
-  <mat-icon matPrefix>{{ iconBefore }}</mat-icon>
+  <mat-form-field class="w-100" color="primary" [appearance]="appearance">
+    <input
+      matInput
+      [placeholder]="placeholder"
+      [id]="id"
+      [name]="name"
+      [formControlName]="formControlName"
+      [type]="type"
+      [required]="required"
+      [autocomplete]="autocomplete"
+    />
+    @if(iconBefore){
+    <mat-icon matPrefix>{{ iconBefore }}</mat-icon>
 
-  } @if(iconAfter){
-  <mat-icon matSuffix>{{ iconAfter }}</mat-icon>
+    } @if(iconAfter){
+    <mat-icon matSuffix>{{ iconAfter }}</mat-icon>
 
-  }
-  <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
-  <mat-error
-    ><strong>{{ errorMessage }}</strong>
-  </mat-error>
-</mat-form-field>
-
+    }
+    <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    <mat-error
+      ><strong>{{ errorMessage }}</strong>
+    </mat-error>
+  </mat-form-field>
 </form>

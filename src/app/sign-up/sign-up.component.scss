@@ -1,15 +1,26 @@
 .login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full height */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Vertically center the login card */
   
-  .card {
-    max-width: 400px;
+  .login-card {
+    width: 400px; /* Set a fixed width for the card */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
   }
-  
-  .login-actions {
-    margin-top: 20px; /* Add space above the login button */
+
+  .full-width-button {
+    height: 50px;
+    width: 100%; /* Extend the button to take the full width */
+    color: white;
+    padding: 10px 0; /* Adjust padding to make the button taller */
+    font-size: 1rem; /* Increase font size for readability */
+    border: none; /* Remove border */
   }
-  
+
+  .full-width-button:hover {
+  }
+}

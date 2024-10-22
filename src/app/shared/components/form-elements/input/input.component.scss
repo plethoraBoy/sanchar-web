@@ -1,9 +1,36 @@
 mat-form-field {
-    display: flex;
-    align-items: center;
-  
-    // input {
-    //   flex: 1; // Ensure the input takes available space
-    // }
+  display: flex;
+  align-items: center;
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0.2rem; /* Decrease padding inside the form field */
   }
-  
+
+  .mat-input-element {
+    font-size: 0.85rem; /* Decrease font size */
+    padding: 0.4rem 0.6rem; /* Decrease padding for a compact look */
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    stroke-width: 1px; /* Make the outline thinner */
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-start,
+  .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    top: -0.3em; /* Adjust the outline to match the smaller size */
+  }
+
+  label.mat-form-field-label {
+    font-size: 0.75rem; /* Reduce label font size */
+    top: -1.5rem; /* Adjust label position */
+  }
+
+  .mat-form-field-subscript-wrapper {
+    font-size: 0.75rem; /* Adjust hint or error messages font size */
+  }
+}
+
+/* Use ::ng-deep only when necessary */
+::ng-deep .mat-form-field-flex {
+  width: 100% !important; /* Adjust width to prevent overflow */
+}

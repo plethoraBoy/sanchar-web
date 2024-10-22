@@ -1,32 +1,96 @@
-<div class="login-form">
-  <mat-card class="card" appearance="outlined">
-    <mat-card-content
-      ><form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <app-input
-          label="Username"
-          placeholder="Enter your username"
-          [form]="myForm"
-          formControlName="username"
-          errorMessage="Username is required"
-          appearance="outline"
-          iconBefore="person"
-        ></app-input>
-  
-        <app-input
-          label="Password"
-          placeholder="Enter your password"
-          [form]="myForm"
-          [formControlName]="'password'"
-          errorMessage="Password is required"
-          appearance="outline"
-          iconBefore="lock"
-          [type]="passwordVisible ? 'text' : 'password'"
-          [iconAfter]="passwordVisible ? 'visibility_off' : 'visibility'"
-        ></app-input>
-  
-        <button mat-flat-button extended  type="submit">Login</button>
-      </form></mat-card-content
+<div
+  class="blank-layout-container justify-content-center align-items-center bg-light h-100"
+>
+  <div class="row w-100 h-100">
+    <!-- Debrand Section (50% width) -->
+    <section
+      id="debrand"
+      class="col-lg-6 d-flex justify-content-center m-t-24 bg-light"
     >
-  </mat-card>
-  
+      <div class="text-center p-4">
+        <!-- Debrand content -->dfdfdffgdfgdfgdf
+        <a>
+          <img src="" class="align-middle m-2" alt="generic-logo" />
+          <span>Sanachar (Debrand Section)</span>
+        </a>
+        <br />
+        <marquee behavior="" direction="">L&T</marquee>
+
+        <div class="d-flex justify-content-center align-items-center" style="min-height: 100px; width: 100%;">
+          <div>Imsges div</div> <!-- Replace with actual images or content -->
+        </div>
+        <!-- Additional debranding elements can go here -->
+      </div>
+    </section>
+
+    <!-- Login Section (50% width) -->
+    <section
+      id="login"
+      class="col-lg-6 d-flex justify-content-center align-items-center bg-gradient"
+    >
+      <div class="col-lg-8 d-flex align-items-center">
+        <mat-card class="cardWithShadow boxed-auth w-100">
+          <mat-card-content class="p-32">
+            <div
+              class="text-center d-flex justify-content-center align-items-center"
+            >
+              <a class="d-flex align-items-center">
+                <img
+                  src="/assets/images/L&T.png"
+                  class="align-middle m-2"
+                  width="25px"
+                  height="25px"
+                  alt="logo"
+                />
+                <span>Sanachar</span>
+              </a>
+            </div>
+
+            <div class="or-border m-t-30">Login to your account</div>
+
+            <form class="m-t-30" [formGroup]="myForm">
+              <!-- Username Input -->
+
+              <app-input
+                label="Username"
+                placeholder="Enter your username"
+                [form]="myForm"
+                formControlName="username"
+                errorMessage="Username is required"
+                appearance="outline"
+                iconBefore="person"
+              ></app-input>
+              <app-input
+                label="Password"
+                placeholder="Enter your password"
+                [form]="myForm"
+                [formControlName]="'password'"
+                errorMessage="Password is required"
+                appearance="outline"
+                iconBefore="lock"
+                [type]="passwordVisible ? 'text' : 'password'"
+                [iconAfter]="passwordVisible ? 'visibility_off' : 'visibility'"
+              ></app-input>
+              <div class="d-flex align-items-center m-b-12">
+                <!-- <mat-checkbox color="primary">Remember this Device</mat-checkbox> -->
+                <a
+                  class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14"
+                  >Forgot Password?</a
+                >
+              </div>
+
+              <a mat-flat-button color="primary" class="w-100"> Sign In </a>
+            </form>
+
+            <span class="d-block f-w-500 text-center m-t-24"
+              >New to?
+              <a class="text-decoration-none text-primary f-w-500 f-s-14">
+                Create an account</a
+              >
+            </span>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </section>
+  </div>
 </div>
