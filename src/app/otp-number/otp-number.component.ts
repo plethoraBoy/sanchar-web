@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-otp-number',
   standalone: true,
@@ -15,6 +15,7 @@ export class OtpNumberComponent {
   @Input() selectedValue: string | undefined;
   @Output() selectionChange = new EventEmitter<string>();
   myForm!: FormGroup;
+  constructor(private router: Router) {}
 
   onSelectionChange(value: string) {
     this.selectionChange.emit(value);
@@ -26,7 +27,12 @@ export class OtpNumberComponent {
   ];
 
   selectedOption: string | undefined;
-
+  otpBack() {
+    this.router.navigate(['']);
+  }
+  onSubmit() {
+    this.router.navigate(['dashboard']);
+  }
   onOptionChange(value: string) {
     console.log('Selected value:', value);
     // Handle the change here

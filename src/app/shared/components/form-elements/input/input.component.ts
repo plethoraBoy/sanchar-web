@@ -1,5 +1,15 @@
-import { Component, Input, forwardRef } from '@angular/core';
-import { FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  Component,
+  Input,
+  forwardRef,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import {
+  FormGroup,
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -36,6 +46,7 @@ export class InputComponent implements ControlValueAccessor {
   // Inputs related to error handling
   @Input() errorMessage: string = 'Invalid input';
 
+  @Output() iconAfterClick = new EventEmitter<void>();
   // ControlValueAccessor methods
   private onChange: any = () => {};
   private onTouch: any = () => {};

@@ -1,115 +1,55 @@
-<div
-  class="blank-layout-container justify-content-center align-items-center bg-light h-100"
->
-  <div class="row w-100 h-100">
-    <!-- Debrand Section (50% width) -->
-    <section
-      id="debrand"
-      class="col-lg-6 d-flex justify-content-center m-t-24 bg-light"
-    >
-      <div class="text-center p-4">
-        <!-- Debrand content -->
-        <a>
-          <img
-            src="/assets/images/L&T.png"
-            class="align-middle m-2"
-            alt="generic-logo"
-            width="25"
-            height="26"
-          />
-          <span>L & T Precision and Engineering System</span>
+<div class="new-login-container">
+
+  <div class="image-section">
+    <span>
+      <img src="images/L&T.png" class="image-section-logo" alt="generic-logo" width="25" height="26" />
+      <h3>L & T Precision and Engineering System</h3>
+    </span>
+    <br />
+    <marquee>L&T</marquee>
+    <img src="/images/login.webp" alt="Login" class="login-image" />
+  </div>
+
+  <div class="form-section">
+    <div class="form-card">
+      <div class="text-center">
+
+        <a class="logo-link">
+          <img src="/images/L&T.png" alt="Company Logo" class="company-logo" />
+          <span class="company-name">Sahachar</span>
         </a>
-        <br />
-        <marquee behavior="" direction="">L&T</marquee>
+      </div>
 
-        <div
-          class="d-flex justify-content-center align-items-center"
-          style="min-height: 100px; width: 100%"
-        >
-          <div>
-            <img src="/assets/images/4308756.jpg" alt="dgr" />
-          </div>
-          <!-- Replace with actual images or content -->
+      <div class="form-header">Login to your account</div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <app-input label="Username" placeholder="Enter your username" [form]="loginForm" formControlName="username"
+          appearance="outline" iconBefore="person" [errorMessage]="getUsernameError()">
+        </app-input>
+
+        <app-input label="Password" placeholder="Enter your password" [form]="loginForm" formControlName="password"
+          [errorMessage]="getPasswordError()" appearance="outline" iconBefore="lock"
+          [type]="passwordVisible ? 'text' : 'password'" [iconAfter]="passwordVisible ? 'visibility_off' : 'visibility'"
+          (iconAfterClick)="togglePasswordVisibility()">
+        </app-input>
+        <div class="captcha-section">
+          <label>CAPTCHA: <span>{{ expectedCaptcha }}</span></label>
+          <app-input placeholder="Enter CAPTCHA" [form]="loginForm" formControlName="captchaResponse"
+            [errorMessage]="getCaptchaError()" appearance="outline" type="text"></app-input>
         </div>
-        <!-- Additional debranding elements can go here -->
+        <div class="forgot-password">
+          <a class="text-primary">Forgot Password?</a>
+        </div>
+
+        <button mat-flat-button color="primary" class="submit-button" type="submit" [disabled]="loginForm.invalid">
+          Sign In
+        </button>
+      </form>
+
+      <div class="register-link">
+        New to?
+        <a class="text-decoration-none text-primary">Create an account</a>
       </div>
-    </section>
-
-    <!-- Login Section (50% width) -->
-    <section
-      id="login"
-      class="col-lg-6 d-flex justify-content-center align-items-center bg-gradient"
-    >
-      <div class="col-lg-8 d-flex align-items-center">
-        <mat-card class="cardWithShadow boxed-auth w-100">
-          <mat-card-content class="p-32">
-            <div
-              class="text-center d-flex justify-content-center align-items-center"
-            >
-              <a class="d-flex align-items-center">
-                <img
-                  src="/assets/images/L&T.png"
-                  class="align-middle m-2"
-                  width="25px"
-                  height="25px"
-                  alt="logo"
-                />
-                <span>Sanachar</span>
-              </a>
-            </div>
-
-            <div class="or-border m-t-30">Login to your account</div>
-
-            <form class="m-t-30" [formGroup]="loginForm">
-              <!-- Username Input -->
-
-              <app-input
-                label="Username"
-                placeholder="Enter your username"
-                [form]="loginForm"
-                formControlName="username"
-                errorMessage="Username is required"
-                appearance="outline"
-                iconBefore="person"
-              ></app-input>
-              <app-input
-                label="Password"
-                placeholder="Enter your password"
-                [form]="loginForm"
-                [formControlName]="'password'"
-                errorMessage="Password is required"
-                appearance="outline"
-                iconBefore="lock"
-                [type]="passwordVisible ? 'text' : 'password'"
-                [iconAfter]="passwordVisible ? 'visibility_off' : 'visibility'"
-              ></app-input>
-              <div class="d-flex align-items-center m-b-12">
-                <!-- <mat-checkbox color="primary">Remember this Device</mat-checkbox> -->
-                <a
-                  class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14"
-                  >Forgot Password?</a
-                >
-              </div>
-
-              <button
-                mat-flat-button
-                color="primary"
-                class="w-100"
-                (click)="onSubmit()"
-              >
-                Sign In
-              </button>
-            </form>
-
-            <span class="d-block f-w-500 text-center m-t-24"
-              >New to?
-              <a class="text-decoration-none text-primary f-w-500 f-s-14">
-                Create an account</a
-              >
-            </span>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </section>
+    </div>
   </div>
 </div>
