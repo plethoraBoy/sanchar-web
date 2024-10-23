@@ -1,21 +1,31 @@
-// Define the NavItem type
-export type NavItem = {
-  icon: string;
-  label: string;
-  route: string;
-  subItems?: NavItem[]; // Make subItems optional and an array of NavItem
-};
+import { signal } from '@angular/core';
+import { MenuItem } from '../menu.model';
 
-// Define the navItems array with appropriate structure
-export const navItems: NavItem[] = [
+export const MENU_ITEMS = <MenuItem[]>[
   {
-    route: '/dashboard',
     icon: 'dashboard',
     label: 'Dashboard',
+    route: 'dashboard',
   },
   {
-    route: '/faq',
-    icon: 'quiz',
+    icon: 'account_balance_wallet',
+    label: 'Financial',
+    children: [
+      {
+        icon: 'TDS',
+        label: 'TDS',
+        route: 'financial/tds',
+      },
+      {
+        icon: 'TCS',
+        label: 'TCS',
+        route: 'financial/tds',
+      },
+    ],
+  },
+  {
+    icon: 'question_answer',
     label: 'FAQ',
+    route: '/faq',
   },
 ];

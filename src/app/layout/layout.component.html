@@ -1,16 +1,16 @@
-<mat-toolbar class="mat-elevation-z3">
-  <button mat-icon-button (click)="collapsed.set(!collapsed())">
-    <mat-icon>menu</mat-icon>
-  </button>
-</mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
-    <app-sidebar></app-sidebar>
-  </mat-sidenav>
-  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
-    <!-- Dashboard -->
-    <main>
+<div class="layout-container">
+  <app-header
+    [collapsed]="collapsed()"
+    (menuToggled)="collapsed.set(!collapsed())"
+  />
+
+  <mat-sidenav-container>
+    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+      <app-sidebar [collapsed]="collapsed()" />
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
       <router-outlet></router-outlet>
-    </main>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

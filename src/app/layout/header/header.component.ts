@@ -17,10 +17,10 @@ import { SharedModule } from '../../shared/shared.module';
   standalone: true,
   imports: [RouterModule, CommonModule, SharedModule],
   templateUrl: './header.component.html',
-  encapsulation: ViewEncapsulation.None,
 })
 
 export class HeaderComponent {
-  
-  
+  @Input() collapsed = false;
+  @Output() menuToggled = new EventEmitter<void>();
+
 }

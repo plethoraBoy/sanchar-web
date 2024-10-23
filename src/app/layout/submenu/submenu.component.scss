@@ -1,0 +1,29 @@
+.submenu-container {
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    cursor: pointer;
+  }
+
+  .expand-icon {
+    transition: transform 0.3s ease;
+    &.expanded {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.submenu-items {
+  background: rgba(0, 0, 0, 0.02);
+
+  .submenu-item {
+    padding-left: 32px;
+    border-left: 5px solid transparent;
+  }
+
+  .selected-menu-item {
+    border-left-color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.05);
+  }
+}

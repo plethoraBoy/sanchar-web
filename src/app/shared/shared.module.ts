@@ -7,8 +7,8 @@ import { CardComponent } from './components/card/card.component';
 import { SelectComponent } from './components/form-elements/select/select.component';
 
 @NgModule({
-  declarations: [InputComponent,CardComponent,SelectComponent],
+  declarations: [InputComponent, CardComponent, SelectComponent],
   imports: [CommonModule, ReactiveFormsModule, MaterialModule],
-  exports: [InputComponent,SelectComponent, MaterialModule],
+  exports: [InputComponent, SelectComponent, MaterialModule, CardComponent],
 })
 export class SharedModule {}
