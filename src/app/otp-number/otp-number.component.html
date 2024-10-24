@@ -1,0 +1,50 @@
+<div class="blank-layout-container justify-content-center align-items-center bg-light h-100">
+  <div class="row w-100 h-100">
+    <!-- Debrand Section (50% width) -->
+    <div class="image-section">
+      <a>
+        <img src="images/L&T.png" class="align-middle m-2" alt="generic-logo" width="25" height="26" />
+        <span>L & T Precision and Engineering System</span>
+      </a>
+      <br />
+      
+      <img src="/images/login.png" alt="Login" class="login-image" />
+    </div>
+
+    <!-- Otp Section (50% width) -->
+    <section id="login" class="col-lg-6 d-flex justify-content-center align-items-center bg-gradient">
+      <div class="col-lg-8 d-flex align-items-center">
+        <mat-card class="cardWithShadow boxed-auth w-100">
+          <mat-card-content class="p-32">
+            <div class="text-center d-flex justify-content-center align-items-center">
+              <a class="d-flex align-items-center">
+                <img src="/images/L&T.png" class="align-middle m-2" width="25px" height="25px" alt="logo" />
+                <span>Sahachar</span>
+              </a>
+            </div>
+
+            <div class="or-border m-t-30">User ID</div>
+
+            <form class="m-t-30">
+              <app-select [label]="'Search Number'" placeholder="Select" [options]="myOptions"
+                (selectionChange)="onOptionChange($event)">
+              </app-select>
+
+              <mat-card-actions class="d-flex justify-content-between">
+                <button mat-stroked-button color="warn" class="w-100 m-24" (click)="otpBack()">
+                  Back
+                </button>
+                <!-- <button mat-flat-button color="primary" class="w-100 m-24">
+                  OTP
+                </button> -->
+                <button mat-flat-button color="primary" class="w-100 m-24" (click)="onSubmit()">
+                  Submit
+                </button>
+              </mat-card-actions>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </section>
+  </div>
+</div>

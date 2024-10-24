@@ -1,0 +1,32 @@
+<div class="submenu-container">
+  <a mat-list-item class="menu-item" (click)="toggleExpanded.emit()" (keydown.enter)="toggleExpanded.emit()"
+    (keydown.space)="toggleExpanded.emit()" tabindex="0">
+
+    <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+    @if(!collapsed){
+    <span matListItemTitle>{{ item.label }}</span>
+
+    } @if (!collapsed) {
+    <span matListItemMeta>
+      <mat-icon class="expand-icon" [class.expanded]="item.expanded">
+        expand_less
+      </mat-icon>
+    </span>
+
+    }
+  </a>
+
+  @if (item.expanded && !collapsed) {
+  <div class="submenu-items">
+    @for (child of item.children; track child) {
+    <a mat-list-item class="submenu-item" [routerLink]="child.route" routerLinkActive="selected-menu-item"
+      #rla="routerLinkActive" [activated]="rla.isActive">
+      <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'" matListItemIcon>
+        {{ child.icon }}
+      </mat-icon>
+      <span matListItemTitle>{{ child.label }}</span>
+    </a>
+    }
+  </div>
+  }
+</div>

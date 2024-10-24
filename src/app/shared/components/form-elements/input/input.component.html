@@ -1,0 +1,22 @@
+<form [formGroup]="form" ngSkipHydration>
+  <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">{{
+    label
+    }}</mat-label>
+
+  <mat-form-field class="w-100" color="primary" [appearance]="'outline'">
+    <input matInput [placeholder]="placeholder" [id]="id" [name]="name" [formControlName]="formControlName"
+      [type]="type" [required]="required" [autocomplete]="autocomplete" />
+    @if(iconBefore){
+    <mat-icon matPrefix>{{ iconBefore }}</mat-icon>
+
+    } @if(iconAfter){
+    <mat-icon matSuffix (click)="iconAfterClick.emit()">{{ iconAfter }}</mat-icon>
+
+    }
+    <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    <mat-error
+      *ngIf="form.get(formControlName)?.invalid && (form.get(formControlName)?.touched || form.get(formControlName)?.dirty)"><strong>{{
+        errorMessage }}</strong>
+    </mat-error>
+  </mat-form-field>
+</form>

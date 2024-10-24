@@ -1,0 +1,16 @@
+<div class="layout-container">
+  <app-header
+    [collapsed]="collapsed()"
+    (menuToggled)="collapsed.set(!collapsed())"
+  />
+
+  <mat-sidenav-container>
+    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+      <app-sidebar [collapsed]="collapsed()" />
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
