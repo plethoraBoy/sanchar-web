@@ -2,14 +2,25 @@
   <app-header
     [collapsed]="collapsed()"
     (menuToggled)="collapsed.set(!collapsed())"
-  />
+  ></app-header>
 
-  <mat-sidenav-container>
-    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
-      <app-sidebar [collapsed]="collapsed()" />
+  <mat-sidenav-container class="flex-1 flex-col">
+    <mat-sidenav
+      class="ml-2 shadow-2xl border-r-2 border-r-black-200"
+      opened
+      mode="side"
+      [style.width]="sidenavWidth()"
+    >
+      <app-sidebar
+        [collapsed]="collapsed()"
+        [showTooltip]="showTooltip()"
+      ></app-sidebar>
     </mat-sidenav>
 
-    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+    <mat-sidenav-content
+      class="px-8 py-4 bg-gray-200"
+      [style.margin-left]="sidenavWidth()"
+    >
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

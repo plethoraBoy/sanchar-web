@@ -4,14 +4,11 @@
   flex-direction: column;
 }
 
-mat-sidenav-container {
-  flex: 1;
-}
+// mat-sidenav-container {
+//   flex: 1;
+// }
 
 mat-sidenav, mat-sidenav-content {
   transition: all 500ms ease-in-out;
 }
 
-.content {
-  padding: 20px;
-}

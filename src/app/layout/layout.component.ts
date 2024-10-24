@@ -9,12 +9,12 @@ import { SubmenuComponent } from './submenu/submenu.component';
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [SharedModule,SubmenuComponent, HeaderComponent, SidebarComponent],
+  imports: [SharedModule, SubmenuComponent, HeaderComponent, SidebarComponent],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
   collapsed = signal(false);
-  sidenavWidth = computed(() => this.collapsed() ? '65px' : '250px');
+  sidenavWidth = computed(() => (this.collapsed() ? '65px' : '250px'));
+  showTooltip = computed(() => this.sidenavWidth() === '65px');
 }
-

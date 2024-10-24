@@ -1,20 +1,18 @@
 <div class="submenu-container">
   <a mat-list-item class="menu-item" (click)="toggleExpanded.emit()">
     <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-    @if(!collapsed){
+    @if (!collapsed) {
     <span matListItemTitle>{{ item.label }}</span>
-
     } @if (!collapsed) {
     <span matListItemMeta>
       <mat-icon class="expand-icon" [class.expanded]="item.expanded">
-        expand_less
+        {{ item.expanded ? "expand_less" : "expand_more" }}
       </mat-icon>
     </span>
-
     }
   </a>
 
-  @if (item.expanded && !collapsed) {
+  @if ((item.expanded && !collapsed) || (item.expanded && collapsed)) {
   <div class="submenu-items">
     @for (child of item.children; track child) {
     <a
