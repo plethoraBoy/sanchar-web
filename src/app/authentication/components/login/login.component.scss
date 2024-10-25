@@ -102,9 +102,9 @@ $new-hover-color: darken($new-primary-color, 10%);
   }
 }
 .captcha-section {
-  margin-top: 20px;
+//   margin-top: 20px;
   display: flex;
-  flex-direction: column;
+justify-content: space-between;
 
   label {
     font-weight: bold;

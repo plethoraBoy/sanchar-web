@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SharedModule } from '../../../shared/shared.module';
 @Component({
   selector: 'app-otp-number',
   standalone: true,
-  imports: [SharedModule, ReactiveFormsModule],
+  imports: [SharedModule],
   templateUrl: './otp-number.component.html',
   styleUrl: './otp-number.component.scss',
 })
