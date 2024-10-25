@@ -34,29 +34,33 @@ export class InputComponent implements ControlValueAccessor {
   // Inputs related to form control and validation
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() autocomplete?: string;
   @Input() placeholder!: string;
   @Input() hint?: string;
   @Input() id!: string;
-  @Input() name?: any;
-  @Input() type: string = 'text';
-  @Input() disabled: boolean = false;
+  @Input() name?: string | any;
+  @Input() type = 'text';
+  @Input() disabled = false;
 
   // Inputs related to error handling
-  @Input() errorMessage: string = 'Invalid input';
+  @Input() errorMessage = 'Invalid input';
 
   @Output() iconAfterClick = new EventEmitter<void>();
   // ControlValueAccessor methods
-  private onChange: any = () => {};
-  private onTouch: any = () => {};
-  private innerValue: any = '';
+  private onChange: (value: string | number) => void = () => {
+    console.log('empty input component fn change');
+  };
+  private onTouch: () => void = () => {
+    console.log('empty input component fn touch');
+  };
+  private innerValue: string | number = '';
 
-  get value(): any {
+  get value(): string | number {
     return this.innerValue;
   }
 
-  set value(val: any) {
+  set value(val: string | number) {
     if (val !== this.innerValue) {
       this.innerValue = val;
       this.onChange(val); // Notify the change to the parent form
@@ -64,15 +68,15 @@ export class InputComponent implements ControlValueAccessor {
     }
   }
 
-  writeValue(value: any): void {
+  writeValue(value: string | number): void {
     this.innerValue = value;
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: string | number) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouch = fn;
   }
 

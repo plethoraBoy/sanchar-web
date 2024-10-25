@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
 import { signal, computed } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
@@ -16,5 +15,4 @@ import { SubmenuComponent } from './submenu/submenu.component';
 export class LayoutComponent {
   collapsed = signal(false);
   sidenavWidth = computed(() => (this.collapsed() ? '65px' : '250px'));
-  showTooltip = computed(() => this.sidenavWidth() === '65px');
 }

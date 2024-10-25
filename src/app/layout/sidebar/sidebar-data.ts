@@ -1,7 +1,6 @@
-import { signal } from '@angular/core';
 import { MenuItem } from '../menu.model';
 
-export const MENU_ITEMS = <MenuItem[]>[
+export const MENU_ITEMS: MenuItem[] = [
   {
     icon: 'dashboard',
     label: 'Dashboard',
@@ -19,7 +18,7 @@ export const MENU_ITEMS = <MenuItem[]>[
       {
         icon: 'TCS',
         label: 'TCS',
-        route: 'financial/tds',
+        route: 'financial/tcs',
       },
     ],
   },

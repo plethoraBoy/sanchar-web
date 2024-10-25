@@ -28,7 +28,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets"  
+                "input": "src/assets"
               }
             ],
             "styles": [
@@ -88,7 +88,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets" 
+                "input": "src/assets"
               }
             ],
             "styles": [
@@ -97,8 +97,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "17a96891-657a-421e-b9fc-e4a902e07689",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

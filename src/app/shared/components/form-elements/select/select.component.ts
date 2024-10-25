@@ -8,9 +8,9 @@ import { FormGroup } from '@angular/forms';
   styleUrl: './select.component.scss',
 })
 export class SelectComponent {
-  @Input() label: string = '';
-  @Input() placeholder :string=''
-  @Input() options: Array<{ value: number; viewValue: any }> = [];
+  @Input() label = '';
+  @Input() placeholder = '';
+  @Input() options: { value: number; viewValue: string | number }[] = [];
   @Input() selectedValue: string | undefined;
   @Output() selectionChange = new EventEmitter<string>();
   myForm!: FormGroup;

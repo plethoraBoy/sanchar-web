@@ -6,8 +6,6 @@ import { SharedModule } from '../../shared/shared.module';
   standalone: true,
   imports: [SharedModule],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent {
-
-}
+export class DashboardComponent {}
